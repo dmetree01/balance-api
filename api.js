@@ -1,8 +1,7 @@
 const express = require('express');
 
-module.exports = async ({ sequelize }) => {
+module.exports = async ({ port, sequelize }) => {
   const app = express();
-  const port = process.env.API_PORT;
   
   app.get('/', (req, res) => {
     res.send('Balance api. Allowed http methods: GET /balance?user_id=1, PUT /balance?user_id=1&amount=-2')
